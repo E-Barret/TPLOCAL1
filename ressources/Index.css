@@ -1,0 +1,53 @@
+﻿/*Style pour l'entête et le menu*/
+.image {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+h1 {
+    margin-right: 170px;
+    margin-left: 170px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav {
+    width: 150px;
+    border: 2px solid #8c014c;
+    background-color: #8c014c;
+    color: white;
+    float: left;
+}
+
+li {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+a {
+    color:chocolate;
+}
+
+
+/*Style pour les corps de pages*/
+
+section, form {
+    margin-left: 170px;
+}
+
+/*Mise en forme des tableaux pour le formulaire et son récapitulatif*/
+table { 
+    border: 2px solid;
+}
+
+th, td {
+    border: 2px solid;
+    text-align: left;
+}
+
+span.erreur {
+    color: red;
+}

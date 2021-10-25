@@ -25,10 +25,13 @@ namespace TPLOCAL1.Controllers
                 switch (id)
                 {
                     case "ListeAvis":
-                        //reste à faire : coder la lecture du fichier xml fourni
-                        return View(id);
+                        //Lien vers le fichier XML contenant les avis
+                        string path = AppDomain.CurrentDomain.BaseDirectory + "FichierXML/DataAvis.xml";
+                        //Création d'une nouvelle liste qui sera envoyer à la vue et qui contiendra les avis.
+                        var listeAvis = new ListeAvis();
+                        //Ouverture de la vue "ListeAvisé avec un paramètre : la liste contenant les avis
+                        return View(id, listeAvis.GetAvis(path));
                     case "Formulaire":
-                        //reste à faire : appeler la vue Formulaire avec le modèle de données vide
                         return View(id);
                     default:
                         //renvoie vers Index (voir routage dans RouteConfig.cs)
@@ -40,12 +43,14 @@ namespace TPLOCAL1.Controllers
 
         //méthode pour envoyer les données du formulaire vers la page de validation
         [HttpPost]
-        public ActionResult ValidationFormulaire(/*model*/)
+        public ActionResult ValidationFormulaire(FormulaireModel form)
         {
-            //reste à faire : tester de si les champs du modele sont bien remplis
-            //s'ils ne sont pas bien remplis, afficher une erreur et rester sur la page formulaire
-            //sinon, appeler la page ValidationFormulaire avec les données remplies par l'utilisateur
-                
+            if (ModelState.IsValid) //Si aucune faute dans le formulaire
+            {
+                return View(form); //Affichage de la vue ValidationFormulaire
+
+            }
+            return View("Formulaire"); //Sinon, la vue Formulaire reste affichée avec la liste des erreurs à résoudre.                
         }
     }
 }

@@ -1,0 +1,72 @@
+﻿<!--Chargement du modèle utilisé pour la vue-->
+@model TPLOCAL1.Models.FormulaireModel
+
+<!--Disposition générale de la page-->
+@{
+    ViewBag.Title = "Page de validation";
+    ViewBag.h1 = "Page de validation";
+    ViewBag.LienSec = "ListeAvis";
+    ViewBag.NomPrem = "Accueil";
+    ViewBag.NomSec = "Liste avis";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<!--Récapitulatif du formulaire enregistré-->
+<section>
+    <p>Votre formulaire a bien été pris en compte</p>
+    <table>
+        <caption>Informations personnelles</caption>
+        <tr>
+            <th>@Html.LabelFor(model => model.Nom)</th>
+            <td>@Html.DisplayFor(model => model.Nom)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.Prenom)</th>
+            <td>@Html.DisplayFor(model => model.Prenom)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.Sexe)</th>
+            <td style="min-width:100px;">@Html.DisplayFor(model => model.Sexe)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.Adresse)</th>
+            <td>@Html.DisplayFor(model => model.Adresse)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.CodePostal)</th>
+            <td>@Html.DisplayFor(model => model.CodePostal)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.Ville)</th>
+            <td>@Html.DisplayFor(model => model.Ville)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.AdresseMail)</th>
+            <td>@Html.DisplayFor(model => model.AdresseMail)</td>
+        </tr>
+    </table>
+    <table>
+        <caption>Informations formation suivie</caption>
+        <tr>
+            <th>@Html.LabelFor(model => model.DateDebutFormation)</th>
+            <td>@Html.DisplayFor(model => model.DateDebutFormation)</td>
+        </tr>
+        <tr>
+            <th>@Html.DisplayFor(model => model.TypeFormation)</th>
+            <td>@Html.DisplayFor(model => model.TypeFormation)</td>
+        </tr>
+    </table>
+    <table>
+        <caption>Avis sur la formation</caption>
+        <tr>
+            <th>@Html.LabelFor(model => model.AvisCobol)</th>
+            <td>@Html.DisplayFor(model => model.AvisCobol)</td>
+        </tr>
+        <tr>
+            <th>@Html.LabelFor(model => model.AvisObjet)</th>
+            <td>@Html.DisplayFor(model => model.AvisObjet)</td>
+        </tr>
+    </table>
+</section>
+
+

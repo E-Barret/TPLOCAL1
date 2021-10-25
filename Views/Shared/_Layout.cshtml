@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/ressources/Index.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <header>
+        <img src="~/ressources/GroupeHN.png" class="image" alt="GroupeHN" />
+        <h1>@ViewBag.h1</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a class="menu" href="/Home/Index/@ViewBag.LienPrem">@ViewBag.NomPrem</a></li>
+            <li><a class="menu" href="/Home/Index/@ViewBag.LienSec">@ViewBag.NomSec</a></li>
+        </ul>
+    </nav>
+    @RenderBody()
+</body>
+</html>

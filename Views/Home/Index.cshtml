@@ -1,17 +1,18 @@
-﻿
+﻿<!--Disposition générale de la page-->
 @{
-    Layout = null;
+    ViewBag.Title = "HN - TP LOCAL";
+    ViewBag.h1 = "Bienvenue dans le TP HN";
+    ViewBag.LienPrem = "Formulaire";
+    ViewBag.LienSec = "ListeAvis";
+    ViewBag.NomPrem = "Remplir le formulaire";
+    ViewBag.NomSec = "Liste avis";
+    Layout = "/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
+<!--Lien vers le formulaire-->
+<section>
+    <p>
+        <a href="/Home/Index/Formulaire">Remplir le formulaire </a>
+    </p>
+</section>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> i'm bleu
-    </div>
-</body>
-</html>
